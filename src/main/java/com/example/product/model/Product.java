@@ -1,6 +1,8 @@
 package com.example.product.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -9,6 +11,9 @@ import jakarta.persistence.Table;
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private int sellerID;
     private String productName;
     private int amount;
@@ -26,6 +31,10 @@ public class Product {
     }
 
     // Getters и Setters
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
     public int getSellerID() { return sellerID; }
     public void setSellerID(int sellerID) { this.sellerID = sellerID; }
 
