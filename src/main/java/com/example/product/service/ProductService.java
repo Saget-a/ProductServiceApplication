@@ -46,4 +46,11 @@ public class ProductService {
     public void delete(Long id) {
         repository.deleteById(id);
     }
+
+    // Перевірка на існування товару по імені (ігноруючи регістр)
+    public boolean productExistsByName(String productName) {
+        return repository.existsByProductNameIgnoreCase(productName);
+    }
+
+
 }

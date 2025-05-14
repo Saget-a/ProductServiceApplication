@@ -46,4 +46,10 @@ public class ProductController {
         product.setSellerID(userId.intValue());
         return productService.save(product);
     }
+
+    @GetMapping("/exists/{productName}")
+    public boolean productExists(@PathVariable String productName) {
+        return productService.productExistsByName(productName);
+    }
+
 }
